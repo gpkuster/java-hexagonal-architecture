@@ -1,0 +1,12 @@
+package com.example.mapping_demo.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data // getters are needed for jackson serialization
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserDto {
+    private String id;
+}
