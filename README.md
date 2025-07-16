@@ -1,6 +1,6 @@
 # Basic spring app
-This a basic spring application 
+(work in progress) This a basic spring application for putting into practice hexagonal architecture principles.
 
 ## Future improvements
-- Add XML support at controller
-- Cover every case
+- Include business logic for relating courses and users
+- Include secondary adapters for allowing the usage of different databases
