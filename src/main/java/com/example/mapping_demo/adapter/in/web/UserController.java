@@ -1,14 +1,14 @@
 package com.example.mapping_demo.adapter.in.web;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.example.mapping_demo.adapter.in.web.dto.UserDto;
 import com.example.mapping_demo.domain.port.in.CreateUserUseCase;
+import com.example.mapping_demo.domain.model.User;
+import com.example.mapping_demo.adapter.in.web.dto.UserDto;
+import org.springframework.web.bind.annotation.*;
 
-// Adaptador primario - controlador
+
+// Primary adapter - controller
 @RestController
+@RequestMapping("/users")
 public class UserController {
 
     private final CreateUserUseCase createUserUseCase;
@@ -17,9 +17,9 @@ public class UserController {
         this.createUserUseCase = createUserUseCase;
     }
 
-    @PostMapping("/users")
-    public void createUser(@RequestBody UserDto userDto) {
-        createUserUseCase.createUser(userDto); // LLAMA a una interfaz
+    @PostMapping
+    public User createUser(@RequestBody UserDto dto) {
+        User user = new User(null, dto.getName(), dto.getEmail());
+        return createUserUseCase.createUser(user);
     }
-    
 }

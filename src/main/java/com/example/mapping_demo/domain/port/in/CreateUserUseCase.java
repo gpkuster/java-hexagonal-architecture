@@ -1,7 +1,7 @@
 package com.example.mapping_demo.domain.port.in;
 
-import com.example.mapping_demo.adapter.in.web.dto.UserDto;
+import com.example.mapping_demo.domain.model.User;
 
 public interface CreateUserUseCase {
-    void createUser(UserDto userDto);
+    User createUser(User userDto);
 }
