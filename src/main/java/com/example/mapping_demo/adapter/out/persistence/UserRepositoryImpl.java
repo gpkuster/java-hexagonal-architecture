@@ -5,20 +5,18 @@ import com.example.mapping_demo.adapter.out.persistence.entity.UserEntity;
 import com.example.mapping_demo.adapter.out.persistence.repository.JpaUserRepository;
 import com.example.mapping_demo.domain.model.User;
 import com.example.mapping_demo.domain.port.out.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.UUID;
 
-// Secondary adapter - Repository implementation
+// Secondary adapter - Implements a port
 @Repository
+@AllArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
     private final JpaUserRepository jpaUserRepository;
-
-    public UserRepositoryImpl(JpaUserRepository jpaUserRepository) {
-        this.jpaUserRepository = jpaUserRepository;
-    }
 
     @Override
     public User save(User user) {

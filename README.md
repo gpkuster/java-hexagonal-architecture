@@ -6,7 +6,7 @@ This is a simple REST API built with **Spring Boot**, for putting into practice 
 
 ## 🛠️ Technologies Used
 
-- ☕ Java 17+
+- ☕ Java 21+
 - 🌱 Spring Boot 3.x
 - 📦 Spring Data JPA
 - 🐘 PostgreSQL

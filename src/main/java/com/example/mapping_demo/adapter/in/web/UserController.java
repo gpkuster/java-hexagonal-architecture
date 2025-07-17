@@ -1,16 +1,13 @@
 package com.example.mapping_demo.adapter.in.web;
 
+import com.example.mapping_demo.adapter.in.web.dto.UserDto;
+import com.example.mapping_demo.domain.model.User;
 import com.example.mapping_demo.domain.port.in.CreateUserUseCase;
 import com.example.mapping_demo.domain.port.in.GetAllUsersUseCase;
-
 import lombok.AllArgsConstructor;
-
-import com.example.mapping_demo.domain.model.User;
-import com.example.mapping_demo.adapter.in.web.dto.UserDto;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-import org.springframework.web.bind.annotation.*;
 
 
 // Primary adapter - controller
@@ -21,6 +18,8 @@ public class UserController {
 
     private final CreateUserUseCase createUserUseCase;
     private final GetAllUsersUseCase getAllUsersUseCase;
+
+    // Primary adapters call interfaces
 
     @PostMapping
     public User createUser(@RequestBody UserDto dto) {

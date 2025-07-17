@@ -9,16 +9,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "users")
+@Table(name = "courses")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEntity {
+public class CourseEntity {
 
     @Id
     private String id;
 
     private String name;
-    private String email;
+    private int duration;
+    private String timetable;
 
 }
