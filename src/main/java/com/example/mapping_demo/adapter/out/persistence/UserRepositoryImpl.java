@@ -1,27 +1,36 @@
 // adapter/out/persistence/UserRepositoryImpl.java
 package com.example.mapping_demo.adapter.out.persistence;
 
+import com.example.mapping_demo.adapter.out.persistence.entity.UserEntity;
+import com.example.mapping_demo.adapter.out.persistence.repository.JpaUserRepository;
 import com.example.mapping_demo.domain.model.User;
 import com.example.mapping_demo.domain.port.out.UserRepository;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
-    private final Map<String, User> db = new HashMap<>();
+    private final JpaUserRepository jpaUserRepository;
+
+    public UserRepositoryImpl(JpaUserRepository jpaUserRepository) {
+        this.jpaUserRepository = jpaUserRepository;
+    }
 
     @Override
     public User save(User user) {
-        // Simulación de persistencia en memoria
         if (user.getId() == null) {
             user.setId(UUID.randomUUID().toString());
         }
-        db.put(user.getId(), user);
-        return user;
+
+        UserEntity entity = new UserEntity();
+        entity.setId(user.getId());
+        entity.setName(user.getName());
+        entity.setEmail(user.getEmail());
+
+        UserEntity saved = jpaUserRepository.save(entity);
+
+        return new User(saved.getId(), saved.getName(), saved.getEmail());
     }
 }
