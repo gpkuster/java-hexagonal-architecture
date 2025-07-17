@@ -1,4 +1,4 @@
-package com.example.mapping_demo.model;
+package com.example.mapping_demo.adapter.in.web.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

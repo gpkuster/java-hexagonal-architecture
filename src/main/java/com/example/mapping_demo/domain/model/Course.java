@@ -1,4 +1,4 @@
-package com.example.mapping_demo.model;
+package com.example.mapping_demo.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

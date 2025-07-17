@@ -1,11 +1,11 @@
-package com.example.mapping_demo.controller;
+package com.example.mapping_demo.adapter.in.web;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.mapping_demo.interfaces.CreateUserUseCase;
-import com.example.mapping_demo.model.UserDto;
+import com.example.mapping_demo.adapter.in.web.dto.UserDto;
+import com.example.mapping_demo.domain.port.in.CreateUserUseCase;
 
 // Adaptador primario - controlador
 @RestController

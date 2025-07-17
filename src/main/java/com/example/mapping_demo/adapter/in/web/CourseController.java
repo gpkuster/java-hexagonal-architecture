@@ -1,4 +1,4 @@
-package com.example.mapping_demo.controller;
+package com.example.mapping_demo.adapter.in.web;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.mapping_demo.model.Course;
+import com.example.mapping_demo.domain.model.Course;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.PostMapping;
