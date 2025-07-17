@@ -7,8 +7,10 @@ import com.example.mapping_demo.domain.model.User;
 import com.example.mapping_demo.domain.port.out.UserRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.UUID;
 
+// Secondary adapter - Repository implementation
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
@@ -32,5 +34,13 @@ public class UserRepositoryImpl implements UserRepository {
         UserEntity saved = jpaUserRepository.save(entity);
 
         return new User(saved.getId(), saved.getName(), saved.getEmail());
+    }
+
+    @Override
+    public List<User> findAll() {
+        List<UserEntity> entities = jpaUserRepository.findAll();
+        return entities.stream()
+            .map(e -> new User(e.getId(), e.getName(), e.getEmail()))
+            .toList();
     }
 }
