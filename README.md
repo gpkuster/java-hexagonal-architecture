@@ -98,5 +98,5 @@ SELECT * FROM users;
 
 ## 👨‍💻 Author
 
-Created by Guillermo
+Created by Guillermo Pastor
 📫 Contact: gpastor.kuster@gmail.com
